@@ -172,7 +172,7 @@ class ProximityDataUpdateCoordinator(DataUpdateCoordinator[ProximityData]):
         )
         assert distance_to_center is not None
 
-        zone_radius = zone.attributes.get("radius", 0)
+        zone_radius: float = zone.attributes["radius"]
 
         adjusted_distance = max(distance_to_center - zone_radius, 0)
         return round(adjusted_distance)
