@@ -170,6 +170,7 @@ class ProximityDataUpdateCoordinator(DataUpdateCoordinator[ProximityData]):
             latitude,
             longitude,
         )
+        # it is ensured, that distance can't be None, since zones must have lat/lon coordinates
         assert distance_to_center is not None
 
         zone_radius: float = zone.attributes["radius"]
